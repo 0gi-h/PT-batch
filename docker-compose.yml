@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  mysql:
+    container_name: mysql_local
+    build: .
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_DATABASE=pass_local
+      - MYSQL_USER=pass_local_user
+      - MYSQL_PASSWORD=passlocal123
+      - MYSQL_ROOT_PASSWORD=passlocal123
+      - TZ=Asia/Seoul
