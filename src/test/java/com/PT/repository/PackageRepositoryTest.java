@@ -15,6 +15,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @Slf4j
 @SpringBootTest
@@ -61,8 +62,8 @@ class PackageRepositoryTest {
         final List<PackageEntity> packageEntities = packageRepository.findByCreatedAtAfter(dateTime, PageRequest.of(0, 1, Sort.by("packageSeq").descending()));
 
         // then
-        assertThat(packageEntities).hasSize(1);
-        assertThat(packageEntities.get(0)).isEqualTo(packageEntity1);
+        assertEquals(1, packageEntities.size());
+        assertEquals(packageEntity1.getPackageSeq(), packageEntities.get(0).getPackageSeq());
     }
 
     @Test
