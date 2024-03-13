@@ -30,9 +30,9 @@ public class LocalDateTimeUtils {
 
     }
 
-//    public static int getWeekOfYear(final LocalDateTime localDateTime) {
-//        return localDateTime.get(WeekFields.of(Locale.KOREA).weekOfYear());
-//
-//    }
+    public static int getWeekOfYear(final LocalDateTime localDateTime) {
+        return localDateTime.get(WeekFields.of(Locale.KOREA).weekOfYear());
+
+    }
 
 }
